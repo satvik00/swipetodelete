@@ -46,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            array.remove(feeds.get_feedholder().getAdapterPosition());
-            feeds.notifyDataSetChanged();
+            int pos=viewHolder.getAdapterPosition();
+            feeds.removeItem(pos);
+          //  feeds.notifyDataSetChanged();
         }
     };
 }

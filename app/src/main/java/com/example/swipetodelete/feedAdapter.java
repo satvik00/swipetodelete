@@ -32,7 +32,10 @@ public class feedAdapter extends RecyclerView.Adapter<com.example.swipetodelete.
     public void onBindViewHolder(@NonNull feedholder holder, int position) {
         holder.textView.setText(articles.get(position));
     }
-
+    public void removeItem(int pos){
+        articles.remove(pos);
+        notifyItemRemoved(pos);
+    }
 
     @Override
     public int getItemCount() {
